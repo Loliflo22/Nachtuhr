@@ -1,0 +1,30 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Nachtuhr</title>
+<style type="text/css">
+  body {
+    background-color: black;
+    color: #CCCCCC; /* soft grey, not bright white */
+    font-family: monospace;
+    font-size: 60px;
+    text-align: center;
+    margin-top: 150px;
+  }
+</style>
+<script type="text/javascript">
+function pad(n) {
+  return (n < 10) ? "0" + n : n;
+}
+function updateClock() {
+  var now = new Date();
+  var h = pad(now.getHours());
+  var m = pad(now.getMinutes());
+  document.getElementById("clock").innerHTML = h + ":" + m;
+}
+</script>
+</head>
+<body onload="updateClock(); setInterval(updateClock,1000);">
+  <div id="clock"></div>
+</body>
+</html>
